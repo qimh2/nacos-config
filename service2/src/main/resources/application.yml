@@ -1,0 +1,6 @@
+common2:
+  name: ${common.name}
+  age: ${common.age}
+  address: ${common.address}
+  birthday: ${common.birthday}
+  fullname: ${common.fullname}
