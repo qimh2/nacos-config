@@ -60,4 +60,14 @@ public class Service1Bootstrap {
         String fullname =  applicationContext.getEnvironment().getProperty("common.fullname");
         return name+"+"+ age+"+"+address+"+"+ birthday+"+"+ fullname;
     }
+
+    @GetMapping(value = "/configs3")
+    public String getConfigs3(){
+        String name = applicationContext.getEnvironment().getProperty("common2.name");
+        String age =  applicationContext.getEnvironment().getProperty("common2.age");
+        String address =  applicationContext.getEnvironment().getProperty("common2.address");
+        String birthday=  applicationContext.getEnvironment().getProperty("common2.birthday");
+        String fullname =  applicationContext.getEnvironment().getProperty("common2.fullname");
+        return name+"+"+ age+"+"+address+"+"+ birthday+"+"+ fullname;
+    }
 }

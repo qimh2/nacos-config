@@ -19,3 +19,4 @@ spring:
           data‐id: ext-config-common-03.properties
           group: REFRESH_GROUP
           refresh: true
+        namespace: 864300ce-db1c-4f9b-9ca2-f462e77e10ca

@@ -8,5 +8,5 @@ spring:
       config:
         server‐addr: localhost:8848 # 配置中心地址
         file‐extension: yaml
-        namespace: 0a0eae78-1aa3-484e-bdf2-8bb66e6cab87 # DEV开发环境
+        namespace: 864300ce-db1c-4f9b-9ca2-f462e77e10ca # DEV开发环境
         group: TEST_GROUP # 测试组
