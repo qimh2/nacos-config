@@ -44,6 +44,13 @@ public class Service2Bootstrap {
     private String config1;
 
     /**
+     * 通过value注解读取配置信息
+     * 不支持动态更新
+     */
+    @Value("${name}")
+    private String name;
+
+    /**
      * http://localhost:56020/configs
      * 这个不支持动态更新
      * @return
@@ -74,6 +81,11 @@ public class Service2Bootstrap {
         String birthday=  applicationContext.getEnvironment().getProperty("common2.birthday");
         String fullname =  applicationContext.getEnvironment().getProperty("common2.fullname");
         return name+"+"+ age+"+"+address+"+"+ birthday+"+"+ fullname;
+    }
+
+    @GetMapping("/getName")
+    public String getName(){
+        return name;
     }
 
 }
