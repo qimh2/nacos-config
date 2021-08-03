@@ -1,10 +1,12 @@
 package com.itheima.nacos.service1;
 
+import com.alibaba.nacos.api.config.annotation.NacosValue;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
@@ -42,6 +44,13 @@ public class Service1Bootstrap {
     private String config1;
 
     /**
+     * 通过NacosValue读取配置，
+     * autoRefreshed 表示是否自动更新
+     */
+    @NacosValue(value = "${common.name}", autoRefreshed = true)
+    private String commonName;
+
+    /**
      * http://localhost:56010/configs
      * 这个不支持动态更新
      * @return
@@ -69,5 +78,13 @@ public class Service1Bootstrap {
         String birthday=  applicationContext.getEnvironment().getProperty("common2.birthday");
         String fullname =  applicationContext.getEnvironment().getProperty("common2.fullname");
         return name+"+"+ age+"+"+address+"+"+ birthday+"+"+ fullname;
+    }
+
+
+
+    @GetMapping(value = "/get")
+    @ResponseBody
+    public String get() {
+        return commonName;
     }
 }
